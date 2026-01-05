@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pix3lTools - Under Construction</title>
+    <title>Pix3lTools - Professional Image & Video Tools</title>
     <style>
         * {
             margin: 0;
@@ -14,13 +14,14 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #2d1b4e 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             position: relative;
-            overflow: hidden;
+            padding: 4rem 0;
         }
 
         body::before {
@@ -131,11 +132,19 @@
             }
         }
 
+        .social-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
         .social-links {
             display: flex;
             gap: 2rem;
             justify-content: center;
-            margin-top: 3rem;
         }
 
         .social-link {
@@ -188,14 +197,296 @@
                 height: 24px;
             }
         }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 3rem auto 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .intro-text:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .projects-section {
+            margin-top: 5rem;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff1493 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:nth-child(5) {
+            grid-column: 3;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 20, 147, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff1493;
+            box-shadow:
+                0 0 30px rgba(255, 20, 147, 0.4),
+                0 0 60px rgba(0, 212, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-lang {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 20, 147, 0.2);
+            border: 1px solid rgba(255, 20, 147, 0.4);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #ff1493;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #ff1493;
+            gap: 0.75rem;
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .projects-section {
+                margin-top: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff1493;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                margin-top: 3rem;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="banner.png" alt="Pix3lTools Banner" class="banner">
         <h1>Pix3lTools</h1>
-        <p class="status">Under Construction</p>
 
+        <p class="intro-text">
+            Transform your creative workflow with specialized tools for image editing, format conversion, AI analysis, and video processing.
+        </p>
+
+        <section class="projects-section">
+            <h2 class="section-title">Our Projects</h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">pix3lforge</h3>
+                        <span class="project-lang">C++ / Qt</span>
+                    </div>
+                    <p class="project-description">
+                        Professional cross-platform desktop image editor built with C++ and Qt 6.9. A powerful tool for advanced image manipulation and editing.
+                    </p>
+                    <a href="https://github.com/Pix3ltools-lab/pix3lforge" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">pix3lsense</h3>
+                        <span class="project-lang">C++</span>
+                    </div>
+                    <p class="project-description">
+                        AI-powered image analysis and cataloging system. Automatically organize, analyze, and categorize your image collections with advanced machine learning.
+                    </p>
+                    <a href="https://github.com/Pix3ltools-lab/pix3lsense" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">pix3lframes</h3>
+                        <span class="project-lang">C++</span>
+                    </div>
+                    <p class="project-description">
+                        High-performance video frame extractor. Extract individual frames from video files with precision and speed for analysis or editing purposes.
+                    </p>
+                    <a href="https://github.com/Pix3ltools-lab/pix3lframes" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">pix3liconv</h3>
+                        <span class="project-lang">C++</span>
+                    </div>
+                    <p class="project-description">
+                        Versatile image format converter supporting PNG, JPEG, and SVG to ICO conversion. Perfect for creating icons from various image formats.
+                    </p>
+                    <a href="https://github.com/Pix3ltools-lab/pix3liconv" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">pix3lcover</h3>
+                        <span class="project-lang">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Web application for creating professional YouTube thumbnails. Design eye-catching covers for your videos with an intuitive web-based interface.
+                    </p>
+                    <a href="https://github.com/Pix3ltools-lab/pix3lcover" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <p class="social-title">Follow Us</p>
         <div class="social-links">
             <a href="https://x.com/pix3ltools" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow us on X">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -209,6 +500,10 @@
                 </svg>
             </a>
         </div>
+
+        <footer>
+            <p>&copy; 2026 Pix3lTools. Open Source Projects. Licensed under <a href="LICENSE" target="_blank">MIT License</a>.</p>
+        </footer>
     </div>
 </body>
 </html>
