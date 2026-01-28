@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pix3lTools</title>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #2d1b4e 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff1493 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ff1493;
+            gap: 0.75rem;
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            transform: rotate(180deg);
+        }
+
+        .policy-content {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .policy-content:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .policy-content h2 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content ul {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-content a {
+            color: #ff1493;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .policy-content a:hover {
+            color: #00d4ff;
+        }
+
+        .last-updated {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff1493;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+
+            .policy-content h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <h1>Privacy Policy</h1>
+
+        <div class="policy-content">
+            <h2>Data Controller</h2>
+            <p>
+                This website is operated by <strong>Pix3lTools</strong>.<br>
+                For any privacy-related inquiries, please contact us through our <a href="https://github.com/Pix3ltools-lab" target="_blank" rel="noopener noreferrer">GitHub page</a>.
+            </p>
+
+            <h2>Information We Collect</h2>
+            <p>
+                This website uses <strong>Vercel Web Analytics</strong>, a privacy-focused analytics service. Vercel Analytics:
+            </p>
+            <ul>
+                <li>Does <strong>not</strong> use cookies for tracking</li>
+                <li>Does <strong>not</strong> collect personal data</li>
+                <li>Does <strong>not</strong> track users across websites</li>
+                <li>Only collects anonymous, aggregated data such as page views, referrer information, and general geographic location (country level)</li>
+            </ul>
+            <p>
+                This data helps us understand how visitors use our website and improve our services.
+            </p>
+
+            <h2>Cookies</h2>
+            <p>
+                This website does <strong>not</strong> use cookies for tracking or advertising purposes. Vercel may use essential technical cookies strictly necessary for the functioning of the hosting service.
+            </p>
+
+            <h2>Third-Party Links</h2>
+            <p>
+                Our website contains links to external sites such as GitHub and X (Twitter). These third-party sites have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of external websites.
+            </p>
+
+            <h2>Your Rights Under GDPR</h2>
+            <p>
+                If you are located in the European Economic Area (EEA), you have certain rights regarding your personal data:
+            </p>
+            <ul>
+                <li><strong>Right of Access</strong> - You can request information about any personal data we hold</li>
+                <li><strong>Right to Rectification</strong> - You can request correction of inaccurate data</li>
+                <li><strong>Right to Erasure</strong> - You can request deletion of your data</li>
+                <li><strong>Right to Data Portability</strong> - You can request a copy of your data in a portable format</li>
+                <li><strong>Right to Object</strong> - You can object to processing of your data</li>
+            </ul>
+            <p>
+                Since we do not collect personal data through this website, these rights are unlikely to apply. However, if you have any concerns, please contact us.
+            </p>
+
+            <h2>Data Security</h2>
+            <p>
+                This website is hosted on Vercel, which employs industry-standard security measures to protect against unauthorized access, alteration, disclosure, or destruction of data.
+            </p>
+
+            <h2>Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.
+            </p>
+
+            <p class="last-updated">Last updated: January 2026</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Pix3lTools. <a href="index.html">Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>
