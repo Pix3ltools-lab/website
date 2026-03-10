@@ -10,6 +10,8 @@ const {
   description = 'Professional tools for image editing, format conversion, AI analysis, and video processing.',
   maxWidth = '1200px',
 } = Astro.props;
+
+const pathname = Astro.url.pathname;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +39,72 @@ const {
       color: white;
       position: relative;
       padding: 4rem 0;
+      padding-top: calc(4rem + 60px);
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(10, 0, 21, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .site-nav .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ff1493 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .site-nav .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .site-nav .nav-link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .site-nav .nav-link:hover {
+      color: #00d4ff;
+    }
+
+    .site-nav .nav-link.active {
+      color: #00d4ff;
+    }
+
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 0 1rem;
+      }
+
+      .site-nav .nav-links {
+        gap: 1.2rem;
+      }
+
+      .site-nav .nav-link {
+        font-size: 0.82rem;
+      }
     }
 
     body::before {
@@ -117,6 +185,14 @@ const {
   </style>
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Pix3lTools</a>
+    <div class="nav-links">
+      <a href="/" class={`nav-link${pathname === '/' ? ' active' : ''}`}>Home</a>
+      <a href="/docs" class={`nav-link${pathname.startsWith('/docs') ? ' active' : ''}`}>Docs</a>
+      <a href="/privacy" class={`nav-link${pathname.startsWith('/privacy') ? ' active' : ''}`}>Privacy</a>
+    </div>
+  </nav>
   <div class="container" style={`max-width: ${maxWidth}`}>
     <slot />
   </div>
