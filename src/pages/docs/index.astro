@@ -12,8 +12,13 @@ const articles = [
       },
       {
         title: 'Self-hosting with Docker',
-        description: 'Deploy Pix3lBoard, Pix3lWiki, Pix3lPrompt, and Pix3lMCP on your own server using Docker Compose and pix3ltools-deploy.',
+        description: 'Deploy Pix3lBoard, Pix3lWiki, Pix3lPrompt, and Pix3lMCP on your own server using Docker Compose.',
         slug: 'deployment',
+      },
+      {
+        title: 'Troubleshooting',
+        description: 'Solutions to common issues: database errors, authentication problems, MCP configuration, and Docker setup.',
+        slug: 'troubleshooting',
       },
     ],
   },
@@ -22,8 +27,18 @@ const articles = [
     items: [
       {
         title: 'Pix3lBoard: Kanban for AI Creators',
-        description: 'How Pix3lBoard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, Midjourney/Suno tracking, and a full REST API.',
+        description: 'How Pix3lBoard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, and a full REST API.',
         slug: 'pix3lboard',
+      },
+      {
+        title: 'REST API Reference',
+        description: 'Complete reference for the Pix3lBoard REST API v1: authentication, boards, lists, cards, and API keys.',
+        slug: 'pix3lboard-api',
+      },
+      {
+        title: 'Pix3lBoard + Pix3lWiki Integration',
+        description: 'How to link wiki pages to cards, navigate between the two apps, and set up cross-app integration.',
+        slug: 'pix3lboard-wiki',
       },
     ],
   },
@@ -42,7 +57,7 @@ const articles = [
     items: [
       {
         title: 'Pix3lPrompt: AI Prompt Editor',
-        description: 'An intelligent prompt editor for AI image, video, and audio generators. Craft, optimize, and manage prompts — 100% client-side, no account required.',
+        description: 'An intelligent prompt editor for AI image, video, and audio generators. 100% client-side, no account required.',
         slug: 'pix3lprompt',
       },
     ],
@@ -54,6 +69,51 @@ const articles = [
         title: 'Pix3lMCP: Managing Pix3lBoard from Claude Code',
         description: 'How to install Pix3lMCP and use it from Claude Code to manage boards, lists, and cards directly from your AI assistant.',
         slug: 'pix3lmcp',
+      },
+      {
+        title: 'Advanced Usage and Tool Reference',
+        description: 'Complete parameter reference for all 17 tools, with real workflow examples for managing Pix3lBoard from Claude Code.',
+        slug: 'pix3lmcp-advanced',
+      },
+    ],
+  },
+  {
+    category: 'Web Tools',
+    items: [
+      {
+        title: 'Pix3lCover',
+        description: 'Web application for creating professional YouTube thumbnails with templates, canvas editor, and PNG/JPG export.',
+        slug: 'pix3lcover',
+      },
+      {
+        title: 'Pix3lMaps',
+        description: 'Privacy-focused mind-mapping tool. Design maps with custom nodes and export as PNG or JSON — all data stays in your browser.',
+        slug: 'pix3lmaps',
+      },
+    ],
+  },
+  {
+    category: 'Desktop Tools',
+    items: [
+      {
+        title: 'Pix3lForge',
+        description: 'Professional cross-platform desktop image editor built with C++ and Qt 6.',
+        slug: 'pix3lforge',
+      },
+      {
+        title: 'Pix3lSense',
+        description: 'AI-powered image analysis and cataloging system built with C++ and Qt.',
+        slug: 'pix3lsense',
+      },
+      {
+        title: 'Pix3lFrames',
+        description: 'High-performance video frame extractor built with C++ and Qt.',
+        slug: 'pix3lframes',
+      },
+      {
+        title: 'Pix3lIconv',
+        description: 'Versatile image format converter: PNG, JPEG, and SVG to ICO. Built with C++ and Qt.',
+        slug: 'pix3liconv',
       },
     ],
   },
