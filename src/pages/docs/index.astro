@@ -8,12 +8,12 @@ const articles = [
       {
         title: 'Introduction to Pix3lTools',
         description: 'An overview of the Pix3lTools ecosystem: what it is, what problems it solves, and how the tools work together.',
-        status: 'coming-soon',
+        slug: 'pix3ltools',
       },
       {
         title: 'Self-hosting with Docker',
-        description: 'Deploy pix3lboard, pix3lwiki, pix3lprompt, and pix3lmcp on your own server using Docker Compose and pix3ltools-deploy.',
-        status: 'coming-soon',
+        description: 'Deploy Pix3lBoard, Pix3lWiki, Pix3lPrompt, and Pix3lMCP on your own server using Docker Compose and pix3ltools-deploy.',
+        slug: 'deployment',
       },
     ],
   },
@@ -22,28 +22,8 @@ const articles = [
     items: [
       {
         title: 'Pix3lBoard: Kanban for AI Creators',
-        description: 'How pix3lboard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, Midjourney/Suno tracking, and API key authentication.',
-        status: 'coming-soon',
-      },
-      {
-        title: 'Using the Pix3lBoard REST API',
-        description: 'A complete guide to the pix3lboard REST API v1: authentication, boards, lists, cards, and all supported fields.',
-        status: 'coming-soon',
-      },
-    ],
-  },
-  {
-    category: 'Pix3lMCP',
-    items: [
-      {
-        title: 'Managing Pix3lBoard from Claude Code',
-        description: 'How to install pix3lmcp and use it from Claude Code to manage boards, lists, and cards directly from your AI assistant.',
-        status: 'coming-soon',
-      },
-      {
-        title: 'Pix3lMCP: All Available Tools',
-        description: 'Reference for all 17 MCP tools exposed by pix3lmcp: list_boards, create_card, update_card, move_card, and more.',
-        status: 'coming-soon',
+        description: 'How Pix3lBoard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, Midjourney/Suno tracking, and a full REST API.',
+        slug: 'pix3lboard',
       },
     ],
   },
@@ -52,8 +32,28 @@ const articles = [
     items: [
       {
         title: 'Pix3lWiki: Knowledge Base for Your Projects',
-        description: 'How to use pix3lwiki to create and organize documentation with Markdown, categories, version history, and board-card linking.',
-        status: 'coming-soon',
+        description: 'How to use Pix3lWiki to create and organize documentation with Markdown, categories, version history, and Pix3lBoard linking.',
+        slug: 'pix3lwiki',
+      },
+    ],
+  },
+  {
+    category: 'Pix3lPrompt',
+    items: [
+      {
+        title: 'Pix3lPrompt: AI Prompt Editor',
+        description: 'An intelligent prompt editor for AI image, video, and audio generators. Craft, optimize, and manage prompts — 100% client-side, no account required.',
+        slug: 'pix3lprompt',
+      },
+    ],
+  },
+  {
+    category: 'Pix3lMCP',
+    items: [
+      {
+        title: 'Pix3lMCP: Managing Pix3lBoard from Claude Code',
+        description: 'How to install Pix3lMCP and use it from Claude Code to manage boards, lists, and cards directly from your AI assistant.',
+        slug: 'pix3lmcp',
       },
     ],
   },
@@ -72,13 +72,11 @@ const articles = [
         <h2 class="section-title">{section.category}</h2>
         <div class="articles-grid">
           {section.items.map((article) => (
-            <div class={`article-card ${article.status}`}>
+            <a href={`/docs/${article.slug}`} class="article-card">
               <h3 class="article-title">{article.title}</h3>
               <p class="article-description">{article.description}</p>
-              {article.status === 'coming-soon' && (
-                <span class="status-badge">Coming Soon</span>
-              )}
-            </div>
+              <span class="read-link">Read →</span>
+            </a>
           ))}
         </div>
       </div>
@@ -101,30 +99,6 @@ const articles = [
 </BaseLayout>
 
 <style>
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-  }
-
-  .back-link:hover {
-    color: #ff1493;
-    gap: 0.75rem;
-  }
-
-  .back-link svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-    transform: rotate(180deg);
-  }
-
   .subtitle {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.6);
@@ -164,16 +138,14 @@ const articles = [
     padding: 1.5rem;
     transition: all 0.3s ease;
     position: relative;
+    text-decoration: none;
+    display: block;
   }
 
   .article-card:hover {
     border-color: rgba(0, 212, 255, 0.4);
     background: rgba(255, 255, 255, 0.05);
     transform: translateY(-3px);
-  }
-
-  .article-card.coming-soon {
-    opacity: 0.7;
   }
 
   .article-title {
@@ -191,17 +163,10 @@ const articles = [
     margin-bottom: 1rem;
   }
 
-  .status-badge {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    background: rgba(255, 20, 147, 0.15);
-    border: 1px solid rgba(255, 20, 147, 0.3);
-    border-radius: 12px;
-    font-size: 0.7rem;
+  .read-link {
+    font-size: 0.85rem;
     color: #ff1493;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 
   .github-cta {
@@ -236,10 +201,6 @@ const articles = [
 
   .github-link:hover {
     color: #ff1493;
-  }
-
-  footer {
-    margin-top: 3rem;
   }
 
   @media (max-width: 768px) {
