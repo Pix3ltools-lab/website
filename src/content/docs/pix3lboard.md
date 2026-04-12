@@ -1,6 +1,6 @@
 ---
 title: "Pix3lBoard: Kanban for AI Creators"
-description: "How Pix3lBoard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, Midjourney/Suno tracking, and a full REST API."
+description: "How Pix3lBoard extends the classic Kanban board with AI-specific fields: prompts, ratings, job numbers, Midjourney/Suno tracking, requirements traceability, and a full REST API."
 category: "Pix3lBoard"
 ---
 
@@ -36,6 +36,7 @@ Pix3lBoard is a modern Kanban board designed for AI creators and project manager
 - **Kanban board** — classic column view with drag & drop
 - **Calendar view** — cards organized by due date
 - **Analytics dashboard** — charts for cards per list, card type distribution, throughput, lead time
+- **Traceability dashboard** — requirements, matrix, and coverage charts per board
 
 ### Collaboration
 - Share boards with users using 4 roles: Owner, Editor, Commenter, Viewer
@@ -53,6 +54,17 @@ Pix3lBoard is a modern Kanban board designed for AI creators and project manager
 - Database backup and restore
 - Storage cleanup
 
+### Requirements Traceability
+- Three-level model: **Requirement → Kanban Card → Test Case → Test Run**
+- Auto-generated codes (REQ-001, TC-001), unique per board
+- Requirement status lifecycle: `draft` → `approved` → `implemented` → `verified`
+- Status promoted automatically when test runs are recorded
+- Test cases linked to cards via the **Tests** modal in the card editor
+- One-click bug card creation from a failed test case
+- Coverage charts by status, priority, and list
+- Traceability data included in JSON export/import backups
+- Full guide: [TRACEABILITY.md](https://github.com/Pix3ltools-lab/pix3lboard/blob/main/TRACEABILITY.md)
+
 ### REST API v1
 - Full CRUD for boards, lists, and cards
 - Bearer token authentication
@@ -63,7 +75,7 @@ Pix3lBoard is a modern Kanban board designed for AI creators and project manager
 ```env
 # App
 NEXT_PUBLIC_APP_NAME=pix3lboard
-NEXT_PUBLIC_APP_VERSION=3.0.1
+NEXT_PUBLIC_APP_VERSION=3.1.1
 NEXT_PUBLIC_APP_URL=https://your-deployment.vercel.app
 
 # Database
